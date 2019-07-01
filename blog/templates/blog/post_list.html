@@ -1,23 +1,12 @@
-<html>
-    <head>
-        <title>Mr Phoenix Blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Mr Phoenix Blog</a></h1>
-        </div>
-        {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}
-        <div align="left">
-        <h3>About me</h3>
-        <a href="https://www.facebook.com/adarsh.verma.7777">Adarsh Kumar Verma</a><br>
-        <a href="https://github.com/Adarshverma013">Github profile</a><br>
-        <a href="https://www.codechef.com/users/adarshverma013">CodeChef profile</a>
-        </div>
-    </body>
-</html>
+{% extends 'blog/base.html' %}
+{% block content %}
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+{% endblock %}
