@@ -1,12 +1,27 @@
 {% extends 'blog/base.html' %}
 {% block content %}
             {% for post in posts %}
-                <div class="post">
+                <div class="post box">
                     <div class="date">
                         <p>published: {{ post.published_date }}</p>
                     </div>
                     <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                     <p>{{ post.text|linebreaksbr }}</p>
+                    <hr>
+                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
                 </div>
             {% endfor %}
+            <hr>
+        <footer>
+                <div class="container">
+                    <div class="row">
+                           <h3>About</h3>
+                                <a  href="https://www.facebook.com/adarsh.verma.7777">Adarsh Kumar Verma  </a><br>
+                                <a  href="https://github.com/Adarshverma013"> Github profile  </a>  
+                    </div>
+                </div class="row">
+                <h3>Contact</h3>
+                <strong>Email: </strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=adarshverma013@gmail.com">adarshverma013@gmail.com</a>  
+                </div>                   
+        </footer>
 {% endblock %}

@@ -41,6 +41,23 @@ h1, h2, h3, h4 {
     margin-bottom: 70px;
 }
 
+.box{
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 10px 25px;
+    text-align: left;
+    display: block;
+    margin-top: 60px;
+}
 .post h2 a, .post h2 a:visited {
     color: #000000;
+}
+
+.comment{
+    margin: 20px 0px 20px 20px;
+}
+
+footer{
+    display: block;
+    margin-bottom: 30px; 
 }

@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>Mr Phoenix Blog</title>
+        <title>Ideal Blogger</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -13,9 +13,13 @@
         <header>
         <div class="page-header">
             {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+                {% else %}
+                <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
-            <h1><a href="/">Mr Phoenix Blog</a></h1>
+            <h1><a href="/">Ideal Blogger</a></h1>
            
         </div>
     </header>
@@ -29,13 +33,5 @@
         </div>
     </div>
     </section>
-    <footer>
-            <div class="container">
-                <h3>About me</h3>
-                <a href="https://www.facebook.com/adarsh.verma.7777">Adarsh Kumar Verma</a><br>
-                <a href="https://github.com/Adarshverma013">Github profile</a><br>
-                <a href="https://www.codechef.com/users/adarshverma013">CodeChef profile</a>
-            </div>                   
-    </footer>
     </body>
 </html>
