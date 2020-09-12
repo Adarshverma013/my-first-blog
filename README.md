@@ -20,7 +20,8 @@
 <img src="/images/Edit.png" height="400" />
 
 * This is a web application created using django
-* Only admin can add or delete posts others can see or comment only
+* New users can now signup and create/edit blogs, they are required to login to edit and create blogs
+* Other users can read and comment on blogs
 * Comments are visible only after admin approves it
 * This blog is available online adarshverma013.pythonanywhere.com
 * Suggestions are most welcome
